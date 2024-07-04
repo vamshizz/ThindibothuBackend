@@ -9,7 +9,7 @@ app.use(express.json());
 const dotenv = require("dotenv");
 dotenv.config();
 const cors = require('cors');
-const dbURI="mongodb+srv://msd73291:Chinna123@cluster0.wrzo3km.mongodb.net/"
+const dbURI=process.env.DATABASE;
 mongoose.connect(dbURI,{useNewurlParser:true, useUnifiedTopology:true})
 .then((result)=>{
     app.listen(4000,()=>{
